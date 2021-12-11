@@ -21,11 +21,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Register22 extends AppCompatActivity {
 
     private EditText Name;
-    private EditText Age;
+    private EditText Agee;
     private EditText Email;
     private EditText Password1;
     private EditText Password2;
@@ -41,6 +46,8 @@ public class Register22 extends AppCompatActivity {
     private RadioGroup Radiogroup;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
+    private FirebaseFirestore fstore;
+    private  String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +55,7 @@ public class Register22 extends AppCompatActivity {
         setContentView(R.layout.activity_register22);
 
         Name = (EditText) findViewById(R.id.edit_name);
-        Age = (EditText) findViewById(R.id.edit_age);
+        Agee = (EditText) findViewById(R.id.edit_age);
         Email = (EditText) findViewById(R.id.edit_mail);
         Password1 = (EditText) findViewById(R.id.edit_password);
         Password2 = (EditText) findViewById(R.id.edit_password2);
@@ -65,6 +72,7 @@ public class Register22 extends AppCompatActivity {
 
 
         mAuth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
 
         if(mAuth.getCurrentUser()!=null){
             Intent intent = new Intent(Register22.this,MainActivity.class);
@@ -80,8 +88,8 @@ public class Register22 extends AppCompatActivity {
                 String password2 = Password2.getText().toString().trim();
 
 
-                String name = Name.getText().toString().trim();
-                String age = Age.getText().toString().trim();
+                String name = Name.getText().toString();
+                String age = Agee.getText().toString();
 
                 if (TextUtils.isEmpty(name) || TextUtils.isEmpty(age)) {
                     Name.setError("Please fill all the details");
@@ -116,10 +124,24 @@ public class Register22 extends AppCompatActivity {
                             user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
-                                            Toast.makeText(Register22.this, "Successful registration. Please check your email id.", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(Register22.this, "Successful registration. Please check your email id for verification.", Toast.LENGTH_SHORT).show();
 
-                                            Intent intent = new Intent(Register22.this, Login.class);
-                                            startActivity(intent);
+                                            userID = mAuth.getCurrentUser().getUid();
+                                            DocumentReference doc = fstore.collection("user").document(userID);
+                                            Map<String,Object> user = new HashMap<>();
+                                            user.put("FullName", name);
+                                            user.put("Age", age);
+                                            user.put("Mail", email);
+                                            doc.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void unused) {
+//                                                    Toast.makeText(Register22.this, "Data saved successfully!", Toast.LENGTH_SHORT).show() ;
+                                                    Intent intent = new Intent(Register22.this, Login.class);
+                                                    startActivity(intent);
+                                                }
+                                            });
+//                                            Intent intent = new Intent(Register22.this, Login.class);
+//                                            startActivity(intent);
 
                                 }
                             }).addOnFailureListener(new OnFailureListener() {

@@ -7,13 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".Register22">
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:srcCompat="@drawable/final_wall" />
+
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="Name: "
         android:textColor="@color/black"
@@ -23,15 +29,14 @@
         android:id="@+id/tv_gender"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/tv_name"
-        android:layout_marginTop="25dp"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:text="Gender: "
         android:textColor="@color/black"
-        android:textSize="22dp"
-        />
+        android:textSize="22dp" />
 
     <TextView
         android:id="@+id/tv_age"
@@ -51,10 +56,10 @@
         android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/tv_age"
-        android:layout_marginTop="25dp"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:text="Email: "
         android:textColor="@color/black"
@@ -64,36 +69,34 @@
         android:id="@+id/tv_pw"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/tv_email"
-        android:layout_marginTop="25dp"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
         android:gravity="center"
         android:text="Password: "
         android:textColor="@color/black"
-        android:textSize="22dp"
-        />
+        android:textSize="22dp" />
 
     <TextView
         android:id="@+id/tv_pw2"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/tv_pw"
-        android:layout_marginTop="23dp"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="23dp"
         android:gravity="left"
         android:text="Confirm \npassword: "
         android:textColor="@color/black"
-        android:textSize="22dp"
-        />
+        android:textSize="22dp" />
 
     <EditText
         android:id="@+id/edit_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="56dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="50dp"
         android:layout_toRightOf="@id/tv_name"
         android:ems="10"
         android:inputType="textPersonName"
@@ -146,13 +149,12 @@
         android:id="@+id/edit_mail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_age"
-        android:layout_marginLeft="75dp"
         android:layout_below="@id/edit_age"
+        android:layout_marginLeft="75dp"
         android:layout_marginTop="25dp"
+        android:layout_toRightOf="@id/tv_age"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/edit_password"
@@ -186,7 +188,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/tv_pw2"
         android:layout_marginTop="23dp"
-        android:backgroundTint="@color/teal_200"
+        android:backgroundTint="@color/dark_peach"
         android:text="Register"
         />
 
@@ -201,7 +203,7 @@
         android:clickable="true"
         android:gravity="center"
         android:text="Login"
-        android:textColor="@color/teal_200" />
+        android:textColor="@color/dark_peach" />
 
     <TextView
         android:id="@+id/already"
@@ -214,6 +216,7 @@
         android:text="Already registered?"
         android:textColor="@color/black"
         android:textSize="18dp" />
+
 
 
 </RelativeLayout>
