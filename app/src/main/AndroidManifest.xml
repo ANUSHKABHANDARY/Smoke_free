@@ -13,16 +13,17 @@
         android:theme="@style/Theme.Smoke_login_firebase">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Register22"
+            android:label="Registration form"
             android:exported="true" />
         <activity
             android:name=".Login"
             android:label="Login page"
             android:exported="true" />
         <activity
-            android:name=".Register22"
-            android:label="Registration form"
-            android:exported="true">
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

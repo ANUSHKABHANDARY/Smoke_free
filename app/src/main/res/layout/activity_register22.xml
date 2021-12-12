@@ -7,19 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".Register22">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        app:srcCompat="@drawable/final_wall" />
-
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="44dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="22dp"
         android:gravity="center"
         android:text="Name: "
         android:textColor="@color/black"
@@ -96,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="56dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="22dp"
         android:layout_toRightOf="@id/tv_name"
         android:ems="10"
         android:inputType="textPersonName"
@@ -185,25 +179,24 @@
         android:id="@+id/edit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/tv_pw2"
-        android:layout_marginTop="23dp"
-        android:backgroundTint="@color/dark_peach"
-        android:text="Register"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Register" />
 
     <Button
         android:id="@+id/create_btt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_button"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/already"
         android:background="#00FFFFFF"
         android:clickable="true"
         android:gravity="center"
         android:text="Login"
-        android:textColor="@color/dark_peach" />
+        android:textColor="@color/teal_200" />
 
     <TextView
         android:id="@+id/already"
@@ -211,7 +204,7 @@
         android:layout_height="50dp"
         android:layout_below="@id/edit_button"
         android:layout_marginLeft="70dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="19dp"
         android:gravity="center"
         android:text="Already registered?"
         android:textColor="@color/black"
