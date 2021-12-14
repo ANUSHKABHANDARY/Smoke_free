@@ -2,6 +2,7 @@ package com.example.smoke_login_firebase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,15 +41,18 @@ public class Details extends AppCompatActivity {
       //  UsersdbRef =FirebaseDatabase.getInstance("https://details-ba373-default-rtdb.firebaseio.com/").getReference().child("Users");
 
         nextbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
+           @Override
             public void onClick(View view) {
 
-                insertinfodata();
+               // insertinfodata();
+                Intent intent = new Intent(Details.this, HomePage.class);
+                startActivity(intent);
+                finish();
             }
 
         });
     }
-    private void insertinfodata() {
+   /* private void insertinfodata() {
 
 
         String dailycigarettes = mlasttime.getText().toString();
@@ -62,7 +66,8 @@ public class Details extends AppCompatActivity {
         //UsersdbRef.push().setValue(users);
         Toast.makeText(Details.this, "Data inserted", Toast.LENGTH_SHORT).show();
 
-    }
+
+    }*/
 
 }
 
