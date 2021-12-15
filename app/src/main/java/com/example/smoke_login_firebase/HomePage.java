@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class HomePage extends AppCompatActivity {
 
     private Button button;
@@ -104,10 +107,10 @@ public class HomePage extends AppCompatActivity {
     }
 
 
-
     private void displayInteger(int number) {
 
         display.setText("" + number);
 
     }
+
 }

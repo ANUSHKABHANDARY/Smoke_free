@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
@@ -46,38 +47,49 @@ public class Login extends AppCompatActivity {
                 String email = Email.getText().toString().trim();
                 String password = Password.getText().toString().trim();
 
-                if(TextUtils.isEmpty(email))
-                    Toast.makeText(Login.this,"Email is required!",Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(email))
+                    Toast.makeText(Login.this, "Email is required!", Toast.LENGTH_SHORT).show();
 
-                if(TextUtils.isEmpty(password))
-                    Toast.makeText(Login.this,"Password is required!",Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(password))
+                    Toast.makeText(Login.this, "Password is required!", Toast.LENGTH_SHORT).show();
 
-                mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
-                            Toast.makeText(Login.this, "Successful login",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(Login.this,UserDetails.class);
+                            Toast.makeText(Login.this, "Successful login", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Login.this, UserDetails.class);
                             startActivity(intent);
 
-                        }else
-                        {
-                            Toast.makeText(Login.this, "Error!"+ Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(Login.this, "Error!" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
 
-        }
+            }
 
-    });
+        });
 
         Create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent before = new Intent(Login.this,Register22.class);
+                Intent before = new Intent(Login.this, Register22.class);
                 startActivity(before);
             }
         });
-}
+
+    }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//
+//        if (user != null){
+//            startActivity((new Intent(Login.this,HomePage.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)));
+//        }
+//    }
 }
