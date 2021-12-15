@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">smoke_login_firebase</string>
+    <string name="app_name">Workout and Routine</string>
+    <string name="click">
+    <a href="https://youtu.be/ZhTOC0T3P3c">click</a>
+    </string>
+    <string name="title_activity_workout">Workout</string>
+    <string name="large_text">
+          "*  Aerobic exercise such as walking,swimming,running reduces the urge to smoke.\n\n"
+        "*  Physical activity strengthens your heart and lungs.\n\n"
+        "*  Withdrawal symptoms and cravings for cigarettes decreases during exercise and upto"
+        "50 minutes after exercising.\n\n"
+        "*  Exercise help you cope with stress and have some energy and it also improves your mood.\n\n"
+        "*  Mind-body practices such as yoga and meditation have the potential to aid smoking"
+        "cessation and become an alternative drug-free treatment.\n\n"
+        "*  Back, neck, arm stretch relaxes muscles in your body.\n\n"
+        "*  Drink atleast 8 glass of water per day, as it gives us energy.\n\n"
+        "*  Replace alcohol with non-alcoholic drinks.\n\n"
+        "*  Drink herbal teas during day.\n\n"
+        "*  Eat green vegetables and fruits as they have low calories, avoid eating sweets.\n\n"
+        "*  Try sugarless gum, mint.\n\n"
+        "*  Take a warm bath ,it helps body to relax and sleep better.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
 </resources>

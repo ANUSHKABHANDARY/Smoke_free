@@ -22,7 +22,7 @@ public class HomePage extends AppCompatActivity {
     private int minteger;
     private ImageView graph;
     private Button graphbutton;
-
+    private Button Healthbutton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class HomePage extends AppCompatActivity {
         display = findViewById(R.id.editTextTextPersonName2);
         graph = findViewById(R.id.imageView3);
         graphbutton=findViewById(R.id.button2);
+        Healthbutton=findViewById(R.id.button3);
 
        graphbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,15 @@ public class HomePage extends AppCompatActivity {
                startActivity(intent);
             }
        });
+
+       Healthbutton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               Intent intent=new Intent(HomePage.this,Health.class);
+               startActivity(intent);
+           }
+       });
+
 
 
 

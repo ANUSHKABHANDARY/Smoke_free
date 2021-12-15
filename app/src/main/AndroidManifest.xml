@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Smoke_login_firebase">
         <activity
+            android:name=".Health"
+            android:exported="true" />
+        <activity
+            android:name=".Workout"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+        <activity
             android:name=".UserDetails"
             android:exported="false" />
         <activity
@@ -20,9 +27,6 @@
         <activity
             android:name=".HomePage"
             android:exported="false" />
-        <activity
-            android:name=".Details"
-            android:exported="true" />
         <activity
             android:name=".Register22"
             android:exported="true"
