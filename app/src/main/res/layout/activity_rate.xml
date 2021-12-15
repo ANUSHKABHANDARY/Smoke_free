@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Rate">
+
+    <EditText
+        android:id="@+id/namedata"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-53dp"
+        tools:layout_editor_absoluteY="64dp" />
+
+    <EditText
+        android:id="@+id/emaildata"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="181dp" />
+
+    <EditText
+        android:id="@+id/messagedata"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+        android:ems="10"
+        android:hint="Message"
+        android:inputType="textPersonName"
+        android:textSize="20sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="284dp" />
+
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:text="Send to server"
+        android:textSize="16sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="417dp" />
+
+    <Button
+        android:id="@+id/btn_details"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:enabled="false"
+        android:text="View send details"
+        android:textSize="16sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="601dp" />
+
+
+</LinearLayout>

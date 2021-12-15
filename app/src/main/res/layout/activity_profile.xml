@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="164dp"
+        android:layout_height="176dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/man" />
+
+    <ImageView
+        android:id="@+id/i_name"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/photo"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@drawable/name" />
+
+    <ImageView
+        android:id="@+id/i_age"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/i_name"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="18dp"
+        app:srcCompat="@drawable/age" />
+
+    <ImageView
+        android:id="@+id/i_gender"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/i_age"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="18dp"
+        app:srcCompat="@drawable/gender" />
+
+    <ImageView
+        android:id="@+id/i_email"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/i_gender"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="18dp"
+        app:srcCompat="@drawable/email" />
+
+    <ImageView
+        android:id="@+id/i_pass"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/i_email"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="18dp"
+        app:srcCompat="@drawable/pass" />
+
+    <EditText
+        android:id="@+id/e_name"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/photo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_toRightOf="@+id/i_name"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/e_age"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/i_name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="21dp"
+        android:layout_toRightOf="@+id/i_age"
+        android:text="Age"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/e_gender"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/i_age"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="21dp"
+        android:layout_toRightOf="@+id/i_gender"
+        android:text="Gender"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/e_email"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/i_gender"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="21dp"
+        android:layout_toRightOf="@+id/i_email"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/e_pass"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/i_email"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="21dp"
+        android:layout_toRightOf="@+id/i_pass"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/e_pass"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="Feedback" />
+
+
+
+</RelativeLayout>
