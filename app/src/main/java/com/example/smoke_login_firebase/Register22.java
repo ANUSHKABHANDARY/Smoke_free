@@ -59,6 +59,7 @@ public class Register22 extends AppCompatActivity {
         Email = (EditText) findViewById(R.id.edit_mail);
         Password1 = (EditText) findViewById(R.id.edit_password);
         Password2 = (EditText) findViewById(R.id.edit_password2);
+
         Register = (Button) findViewById(R.id.edit_button);
         Create = (Button) findViewById(R.id.create_btt);
         Already = (TextView) findViewById(R.id.already);
@@ -131,6 +132,7 @@ public class Register22 extends AppCompatActivity {
                                             Map<String,Object> user = new HashMap<>();
                                             user.put("FullName", name);
                                             user.put("Age", age);
+                                            user.put("Pass",password1);
                                             user.put("Mail", email);
                                             doc.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
