@@ -4,6 +4,7 @@ package com.example.smoke_login_firebase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
@@ -22,7 +23,7 @@ public class GraphPage extends AppCompatActivity {
 
     private TextView Number;
     private ProgressBar progressBar;
-    private EditText moneysaved;
+    private TextView Spent;
     private Button start;
     private Chronometer chronometer;
 
@@ -40,31 +41,38 @@ public class GraphPage extends AppCompatActivity {
 
         Number = findViewById(R.id.num);
         progressBar = findViewById(R.id.progressBar);
-        moneysaved = findViewById(R.id.editTextTextPersonName2);
+        Spent = findViewById(R.id.saved);
         start = findViewById(R.id.shuru);
         chronometer = findViewById(R.id.chronometer);
 
         chronometer.setBase(SystemClock.elapsedRealtime());
 
+        chronometer.setBase(SystemClock.elapsedRealtime());
         start.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 chronometer.start();
             }
         });
 
-
-        // perform click  event on restart button to set the base time on chronometer
-//        restart.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                // TODO Auto-generated method stub
-//
-//                chronometer.setBase(SystemClock.elapsedRealtime());
-//            }
-//        });
+        Spent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GraphPage.this, HomePage.class);
+                startActivityForResult(intent, 2);
+            }
+        });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2) {
+            if (resultCode == RESULT_OK) {
+                String returnString = data.getStringExtra("result");
+                Spent.setText(returnString);
+            }
+        }
 
 
       //  smokefreesince.setOnClickListener(new View.OnClickListener() {
@@ -80,21 +88,6 @@ public class GraphPage extends AppCompatActivity {
 
       //  });
 
-
-       // moneysaved.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-        //    public void onClick(View view) {
-           //     MoneySaved = FirebaseDatabase.getInstance();
-            //    reference = MoneySaved.getReference("Money Saved");
-            //    reference.setValue("100 RS.");
-
-
-
-
-
-
-        //    }
-       // });
 
 
     }

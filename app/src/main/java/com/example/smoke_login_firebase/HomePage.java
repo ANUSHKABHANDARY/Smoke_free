@@ -3,6 +3,7 @@ package com.example.smoke_login_firebase;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ public class HomePage extends AppCompatActivity {
     private ImageView decrease;
     private EditText display;
     private int minteger;
+    private int cost;
     private ImageView graph;
     private Button graphbutton;
     private Button Healthbutton;
@@ -101,9 +103,17 @@ public class HomePage extends AppCompatActivity {
 
                 minteger = minteger + 1;
                 displayInteger(minteger);
+
+                cost = minteger * 12;
             }
         });
 
+        String s = String.valueOf(cost);
+        Intent returnIntent = new Intent();
+
+        returnIntent.putExtra("result", s);
+        setResult(Activity.RESULT_OK,returnIntent);
+        finish();
 
     }
 
