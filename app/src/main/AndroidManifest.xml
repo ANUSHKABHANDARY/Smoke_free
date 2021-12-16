@@ -13,10 +13,12 @@
         android:theme="@style/Theme.Smoke_login_firebase">
         <activity
             android:name=".Rate"
-            android:exported="true" />
+            android:exported="true"
+        android:label="Rate our app" />
         <activity
             android:name=".Feedback"
-            android:exported="true" />
+            android:exported="true"
+        android:label="Feedback" />
         <activity
             android:name=".Profile"
             android:exported="true"
@@ -28,7 +30,8 @@
         <activity
             android:name=".Workout"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+            android:label="Workout and Routine"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".UserDetails"
             android:exported="false"
