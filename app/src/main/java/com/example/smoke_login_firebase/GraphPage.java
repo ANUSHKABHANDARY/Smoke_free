@@ -5,7 +5,10 @@ package com.example.smoke_login_firebase;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -17,10 +20,11 @@ import android.widget.TextView;
 
 public class GraphPage extends AppCompatActivity {
 
-    private TextView day;
+    private TextView Number;
     private ProgressBar progressBar;
-    private EditText smokefreesince;
     private EditText moneysaved;
+    private Button start;
+    private Chronometer chronometer;
 
    // private FirebaseDatabase SmokeFree;
     //private DatabaseReference reference;
@@ -34,10 +38,33 @@ public class GraphPage extends AppCompatActivity {
         setContentView(R.layout.activity_graph_page);
 
 
-        day = findViewById(R.id.textView);
+        Number = findViewById(R.id.num);
         progressBar = findViewById(R.id.progressBar);
-        smokefreesince = findViewById(R.id.editTextTextPersonName);
         moneysaved = findViewById(R.id.editTextTextPersonName2);
+        start = findViewById(R.id.shuru);
+        chronometer = findViewById(R.id.chronometer);
+
+        chronometer.setBase(SystemClock.elapsedRealtime());
+
+        start.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                chronometer.start();
+            }
+        });
+
+
+        // perform click  event on restart button to set the base time on chronometer
+//        restart.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//
+//                chronometer.setBase(SystemClock.elapsedRealtime());
+//            }
+//        });
 
 
       //  smokefreesince.setOnClickListener(new View.OnClickListener() {

@@ -56,6 +56,8 @@ public class Profile extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        userID = mAuth.getCurrentUser().getUid();
 
         Feed.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,17 +67,6 @@ public class Profile extends AppCompatActivity {
                 finish();
             }
         });
-
-        Logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAuth.signOut();
-            }
-        });
-
-
-        FirebaseUser user = mAuth.getCurrentUser();
-        userID = mAuth.getCurrentUser().getUid();
 
         DocumentReference doc = fstore.collection("user").document(userID);
         doc.addSnapshotListener(this,new EventListener<DocumentSnapshot>() {
@@ -90,7 +81,13 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                mAuth.signOut();
+            }
+        });
     }
 
 }

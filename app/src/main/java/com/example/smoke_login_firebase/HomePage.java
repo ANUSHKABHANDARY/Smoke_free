@@ -28,6 +28,7 @@ public class HomePage extends AppCompatActivity {
     private Button Healthbutton;
     private Button Profilebutton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

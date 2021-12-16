@@ -6,14 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Rate extends AppCompatActivity {
 
-    EditText namedata, emaildata, messagedata;
-    Button send, details;
-    //FirebaseFirestore database;
+    EditText namedata, messagedata;
+    Button send;
+    private FirebaseAuth mAuth;
+    private FirebaseUser FeedBack;
+    private FirebaseFirestore fstore;
+    private  String userFeedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,18 +33,19 @@ public class Rate extends AppCompatActivity {
 
         //database=FirebaseFirestore.getInstance();
         namedata = findViewById(R.id.namedata);
-        emaildata = findViewById(R.id.emaildata);
         messagedata = findViewById(R.id.messagedata);
 
         send = findViewById(R.id.btn_send);
-        details = findViewById(R.id.btn_details);
+
+        mAuth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
+
+        FirebaseUser answer = mAuth.getCurrentUser();
 
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View V) {
-                details.setEnabled(true);
                 final String name = namedata.getText().toString();
-                final String email = emaildata.getText().toString();
                 final String message = messagedata.getText().toString();
 
 
@@ -42,38 +54,28 @@ public class Rate extends AppCompatActivity {
                     send.setEnabled(false);
                 }
 
-                if (email.isEmpty()) {
-                    emaildata.setError("This is an required field");
-                    send.setEnabled(false);
-                }
-
                 if (message.isEmpty()) {
                     messagedata.setError("This is an required field");
                     send.setEnabled(false);
                 }
 
-                HashMap<String,Object> feedback=new HashMap<>();
-                feedback.put("email",email);
-                feedback.put("name",name);
-                feedback.put("message",message);
+                userFeedback = mAuth.getCurrentUser().getUid();
 
+                DocumentReference doc = fstore.collection("Feedback").document(userFeedback);
+                Map<String,Object> Feedback = new HashMap<>();
 
-//                database.collection("Feedback").document(email)
-//                        .set(feedback)
-//                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                            @Override
-//                            public void onComplete(@NonNull Task<Void> task) {
-//                                if(task.isSuccessful()){
-//                                    Toast.makeText(feedbackv2.this, "Data Entered", Toast.LENGTH_SHORT).show();
-//
-//
-//                                } else{
-//                                    Toast.makeText(feedbackv2.this, "Data Not Entered", Toast.LENGTH_SHORT).show();
-//
-//
-//                                }
-                            }
-                        });
+                Feedback.put("name",name);
+                Feedback.put("message",message);
+
+                doc.set(Feedback).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(Rate.this, "Thank you for your feedback!", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
             }
+        });
+
     }
+}
